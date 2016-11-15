@@ -2,7 +2,9 @@
 A basic slide show implementation using react templates
 
 
-## USAGE
+
+## build commands
+```bash 
 ### Start for development
 npm start # or
 npm run serve
@@ -27,3 +29,4 @@ npm run clean
 
 ### Just copy the static assets
 npm run copy
+```
