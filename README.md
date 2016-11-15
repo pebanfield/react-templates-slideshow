@@ -1,32 +1,47 @@
 # react-templates-slideshow
 A basic slide show implementation using react templates
 
+## This project leverages the react-webpack generator
 
+https://github.com/react-webpack-generators/generator-react-webpack
+
+## Generating new components
+
+- from the project root
+```bash 
+yo react-webpack:component my/namespaced/components/name
+```
+
+The above command will create a new component, as well as its stylesheet and a basic testcase.
+
+## Generating new stateless functional components
+
+yo react-webpack:component my/namespaced/components/name --stateless
 
 ## build commands
 ```bash 
-### Start for development
+- Start for development
 npm start # or
 npm run serve
 
-### Start the dev-server with the dist version
+- Start the dev-server with the dist version
 npm run serve:dist
 
-### Just build the dist version and copy static files
+- Just build the dist version and copy static files
 npm run dist
 
-### Run unit tests
+- Run unit tests
 npm test
 
-### Auto-run unit tests on file changes
+- Auto-run unit tests on file changes
 npm run test:watch
 
-### Lint all files in src (also automatically done AFTER tests are run)
+- Lint all files in src (also automatically done AFTER tests are run)
 npm run lint
 
-### Clean up the dist directory
+- Clean up the dist directory
 npm run clean
 
-### Just copy the static assets
+- Just copy the static assets
 npm run copy
 ```
