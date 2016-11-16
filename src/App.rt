@@ -1,0 +1,4 @@
+<rt-require dependency="./components/Slideshow" as="Slideshow"/>
+<div>
+    <Slideshow class="slideshow"></Slideshow>
+</div>
