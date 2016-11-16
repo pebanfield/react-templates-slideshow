@@ -24,23 +24,32 @@ module.exports = React.createClass({
       {id: 3, src: 'src/assets/images/liguria.jpg'},
       {id: 4, src: 'src/assets/images/londra-hotel.jpg'}];
 
-    return { slideIndex: 1, images: this.images};
+    return { slideIndex: 0, images: this.images};
   },
   componentDidMount: function(){
-    this.showDivs(this.state.slideIndex);
+    this.showSlide(this.state.slideIndex);
   },
-  plusDivs(n){
-    this.showDivs(this.state.slideIndex += n);
+  showNextSlide(){
+    this.state.slideIndex++;
+    this.showSlide(this.state.slideIndex);
   },
-  showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {this.state.slideIndex = 1}
-    if (n < 1) {this.state.slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
+  showPrevSlide(){
+    this.state.slideIndex--;
+    this.showSlide(this.state.slideIndex);
+  },
+  showSlide(index) {
+
+    let slides = document.getElementsByClassName("slides");
+
+    if (index > slides.length) {
+      this.state.slideIndex = 0;
+    } else if (index < 1) {
+      this.state.slideIndex = slides.length-1;
     }
-    x[this.state.slideIndex-1].style.display = "block";
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[this.state.slideIndex].style.display = "block";
   },
   render: template
 });
