@@ -1,0 +1,25 @@
+{
+  "name": "react-templates-transform-boilerplate",
+  "description": "A React-Templates example.",
+  "main": "index.js",
+  "authors": [
+    "https://github.com/pebanfield"
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-templates",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/pebanfield/react-templates-slideshow",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
