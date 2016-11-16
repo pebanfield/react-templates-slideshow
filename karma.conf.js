@@ -3,10 +3,10 @@ const webpackConfig = require('./webpack.config.dev')
 module.exports = function(config) {
   config.set({
     autoWatch: false,
-    basePath: 'client',
+    basePath: 'src',
     browsers: ['Chrome'],
+    frameworks: ['mocha'],
     colors: true,
-    concurrency: Infinity,
     coverageReporter: {
       reporters: [
         { type: 'lcov', dir: '../coverage/', subdir: '.' },
@@ -15,17 +15,23 @@ module.exports = function(config) {
       ]
     },
     files: [
-      {pattern: 'src/*-spec.js', watched: false}
+      {pattern: '/**/*-spec.js', watched: false}
     ],
-    frameworks: ['mocha', 'chai'],
     logLevel: config.LOG_INFO,
     port: 9876,
     preprocessors: {
-      'src/**/*-spec.js': ['webpack','sourcemap']
+      '/**/*-spec.js': ['webpack','sourcemap']
     },
-    reporters: ['mocha', 'coverage'],
     singleRun: true,
     webpack: webpackConfig,
-    webpackMiddleware: { noInfo: true }
+    webpackMiddleware: { noInfo: true },
+    plugins: [
+      'karma-mocha'
+    ],
+    'client' : {
+      'mocha' : {
+        'ui' : 'tdd'
+      }
+    }
   })
 }

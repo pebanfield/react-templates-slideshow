@@ -41,9 +41,9 @@ module.exports = React.createClass({
 
     let slides = document.getElementsByClassName("slides");
 
-    if (index > slides.length) {
+    if (index > slides.length-1) {
       this.state.slideIndex = 0;
-    } else if (index < 1) {
+    } else if (index < 0) {
       this.state.slideIndex = slides.length-1;
     }
     for (let i = 0; i < slides.length; i++) {
